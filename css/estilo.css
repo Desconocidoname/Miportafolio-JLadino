@@ -20,3 +20,18 @@ header {
     border-bottom: solid 20px #000;
     margin-bottom: 20px;
 }
+
+#foto-perfil {
+    border-radius: 50%;
+    border: 5px solid #4CAF50;
+}
+
+article {
+    background-color: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    float:left
+}
