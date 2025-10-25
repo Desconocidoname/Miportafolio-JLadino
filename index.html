@@ -1,129 +1,747 @@
-<!DOCTYPE html> <!-- Indica la versión de HTML que se está utilizando -->
-<html lang="es"> <!-- Define el idioma de la página -->
-    <head> <!-- Encabezado del documento -->
-        <title>Portafolio Profesional</title> <!-- Título de la pestaña -->
-        <meta charset="UTF-8"> <!-- Codificación de caracteres en español -->
-        
-    </head>
-    <body> <!-- Aquí va todo lo que el usuario ve, es el cuerpo del programa -->
-        <header>
-            <h1>Portafolio Profesional</h1> <!-- h1 es para títulos principales -->
-            <h4>Juan Daniel</h4>
-            <p>Desarrollador Fullstack | Estudiante de Ingeniería en TI</p>
-        </header>
+<!DOCTYPE html>
+<html lang="es">
 
-        <!-- Menú de navegación -->
-        <nav>
-            <a href="#">Inicio</a> <!-- La etiqueta <a> crea un enlace -->
-            <a href="#">Sobre mí</a> <!-- href indica la página a la que redirige -->
-            <a href="#">Mi experiencia</a>
-            <a href="#">Contáctame</a>
-        </nav>
+<head>
+  <meta charset="UTF-8" />
+  <title>Portafolio de Juan Daniel | Desarrollo Multiplataforma</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Fuentes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;500;700;800&family=Quicksand:wght@400;600;700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
 
-        <!-- Contenido principal -->
-        <main>
-            <section>
-                <h2>Bienvenidos a mi Portafolio Profesional</h2>
-                <p>
-                    Soy <mark>Juan Daniel Ladino Hernandez</mark>. Me especializo en el desarrollo de aplicaciones
-                    web y móviles, combinando creatividad con tecnología para resolver problemas de manera eficiente. 
-                    Me apasiona aprender nuevas herramientas, trabajar en equipo y seguir creciendo en el área de 
-                    la Ingeniería en Tecnologías de la Información.
-                </p>
-                <p>
-                    <small>Mi frase favorita es:</small> "Primero resuelvo, después codifico".
-                </p>
-                <img src="images/Foto-perfil.jpg " 
-                     alt="Foto de perfil" width="300" height="400" id="foto-perfil">
-            </section>
-            
-        </main>
-        <aside>
-            <h1>¿Sabias que?</h1>
-            <p>Actualmente estudio la carrera de Tecnologia de la Iformacion e inovacion digital </p>
+<body>
+
+  <header class="header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Inicio">
+        <span class="brand__logo">JD</span>
+        <span class="brand__text">Juan Daniel</span>
+      </a>
+
+      <nav id="menu-principal" class="nav-wrap__nav" aria-label="Navegación principal">
+        <ul class="nav" id="nav-list">
+          <li><a href="#inicio" class="nav__link" aria-current="page">Inicio</a></li>
+          <li><a href="#sobre-mi" class="nav__link">Sobre mí</a></li>
+          <li><a href="#proyectos" class="nav__link">Proyectos</a></li>
+          <li><a href="#certificaciones" class="nav__link">Certificados</a></li>
+          <li><a href="#contacto" class="nav__link">Contáctame</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions" aria-hidden="false">
+        <!-- Theme toggle (igual que antes) -->
+        <button id="btn-theme" class="icon-btn" title="Cambiar tema" aria-label="Cambiar tema">
+          <svg id="icon-theme" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 2v1M12 21v1M4.2 4.2l.7.7M19.1 19.1l.7.7M2 12h1M21 12h1M4.2 19.8l.7-.7M19.1 4.9l.7-.7" />
+          </svg>
+        </button>
+
+      </div>
+    </div>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section id="inicio" class="hero section">
+    <div class="container hero__grid">
+      <div class="hero__copy">
+        <h1>
+          <span id="typing" class="typing" aria-live="polite"></span>
+        </h1>
+        <p class="lead">Estudiante de <strong>Ingeniería en TI</strong> enfocado en construir aplicaciones web y móviles
+          con impacto real.</p>
+
+        <div style="margin-top:12px; display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+          <div>Visitas: <span id="visits" class="visits">0</span></div>
+          <div class="cta">
+            <a class="btn btn--primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn btn--ghost" href="#contacto">Contactar</a>
+          </div>
+        </div>
+      </div>
+
+      <picture class="hero__photo">
+        <img src="images/222046344.png" alt="Foto de perfil de Juan Daniel" width="320" height="320" class="avatar"
+          loading="lazy" />
+      </picture>
+    </div>
+  </section>
+
+  <main id="contenido">
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="section">
+      <div class="container grid-2">
+        <article class="card reveal">
+          <h2>Sobre mí</h2>
+          <p>Soy <mark>Juan Daniel Ladino Hernández</mark>. Me especializo en el desarrollo de aplicaciones web y
+            móviles, combinando creatividad con tecnología para resolver problemas de manera eficiente.</p>
+          <p>Me apasiona aprender nuevas herramientas, trabajar en equipo y crecer en el área de <strong>Tecnologías de
+              la Información</strong>.</p>
+          <p class="quote"><small>Mi frase favorita:</small><br />“Primero resuelvo, después codifico.”</p>
+
+          <h3 style="margin-top:12px;">Habilidades</h3>
+          <div class="skills-grid">
+            <div class="skill">
+              <div class="skill__icon" aria-hidden="true">⚡</div>
+              <div style="width:120px;font-weight:700">Flutter</div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-fill="85%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill__icon" aria-hidden="true">🔥</div>
+              <div style="width:120px;font-weight:700">JavaScript</div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-fill="88%"></div>
+              </div>
+            </div>
+
+            <div class="skill">
+              <div class="skill__icon" aria-hidden="true">🗄️</div>
+              <div style="width:120px;font-weight:700">Firebase / SQL</div>
+              <div class="skill__bar">
+                <div class="skill__fill" data-fill="75%"></div>
+              </div>
+            </div>
+          </div>
+
+          <h3 style="margin-top:14px;">Intereses</h3>
+          <ul class="tags" aria-label="Intereses">
+            <li class="tag">Aviación ✈️</li>
+            <li class="tag">Negocios</li>
+            <li class="tag">UX / UI</li>
+            <li class="tag">Automatización</li>
+          </ul>
+        </article>
+
+        <aside class="card card--soft reveal">
+          <h3>¿Sabías que…?</h3>
+          <p>Actualmente estudio la carrera de Tecnologías de la Información e Innovación Digital en la universidad. Mis
+            fundamentos técnicos vienen de mi carrera técnica en <strong>CBTis 229</strong> donde cursé programación.
+          </p>
+
+          <h4 style="margin-top:12px;">Trayectoria</h4>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <strong>CBTis 229 — Técnico en Programación</strong>
+                <div class="muted" id="muted">2021 — 2024</div>
+                <div class="muted" id="muted" style="margin-top:6px;">Bases de programación, bases de datos y proyectos
+                  escolares.
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-dot" aria-hidden="true"></div>
+              <div class="timeline-content">
+                <strong>Universidad — Ingeniería en TI</strong>
+                <div class="muted" id="muted">2024 — actualidad</div>
+                <div class="muted" id="muted" style="margin-top:6px;">Estudios en curso con enfoque en apps móviles web
+                  y
+                  aplicaciones de escritorio.</div>
+              </div>
+            </div>
+          </div>
+
+          <h4 style="margin-top:12px;">Metodologías</h4>
+          <ul class="bullets">
+            <li>Git & GitHub</li>
+            <li>Diseño accesible</li>
+          </ul>
         </aside>
-        <section>
-                <article>
-                    <h2>🌱 Proyecto Integrador: EcoRegistro</h2>
-  <p>
-    <strong>Periodo:</strong> 
-    <time datetime="2025-05">Mayo 2025</time> - 
-    <time datetime="2025-07">Julio 2025</time>
-  </p>
+      </div>
+    </section>
 
-  <h3>⚙️ Tecnologías y desarrollo</h3>
-  <ul>
-    <li>💻 Desarrollé la <b>interfaz de usuario</b> con <b>Windows Forms</b> para una experiencia intuitiva.</li>
-    <li>🔄 Implementé la <b>lógica de negocio</b> para registrar donaciones y calcular puntos de bonificación.</li>
-    <li>🗄️ Utilicé <b>SQL Server</b> como base de datos para almacenar usuarios y donaciones.</li>
-    <li>✅ Apliqué <b>pruebas</b> para asegurar la funcionalidad y la usabilidad del sistema.</li>
-    <li>👥 Colaboré con un <b>equipo de 4 personas</b>, usando <b>metodologías ágiles</b> (SCRUM) para la gestión.</li>
-  </ul>
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="section section--alt">
+      <div class="container">
+        <h2 class="reveal">Proyectos destacados</h2>
+        <div class="projects-grid reveal">
+          <!-- Proyecto 5 -->
+          <article class="card project">
+            <header class="project__head">
+              <h3>📊 Pagina Web </h3>
+              <p class="periodo">
+                <time datetime="2025-07">Oct 2025</time>
+              </p>
+            </header>
+            <p>Pagina web <strong>informativa</strong> para la empresa de desarrollo
+              tecnologico Kodyn.</p>
+            <ul class="tags">
+              <li class="tag">Html</li>
+              <li class="tag">Css</li>
+              <li class="tag">Netlify</li>
+            </ul>
+            <footer class="project__foot">
+              <a class="link" href="https://kodyn.netlify.app/">Demo</a>
+              <a class="link" href="https://github.com/Desconocidoname/kodyn">Repositorio</a>
+            </footer>
+          </article>
+          <!-- Proyecto 1 -->
+          <article class="card project">
+            <header class="project__head">
+              <h3>💰FinanceGrow</h3>
+              <p class="periodo">
+                <time datetime="2025-01">Ene 2025</time> – <time datetime="2025-03">Mar 2025</time>
+              </p>
+            </header>
+            <p>App web para <strong>gestión financiera personal</strong>, con reportes dinámicos y control de
+              gastos/ingresos.</p>
+            <ul class="tags">
+              <li class="tag">HTML</li>
+              <li class="tag">CSS</li>
+              <li class="tag">JS</li>
+              <li class="tag">Node.js</li>
+            </ul>
+            <footer class="project__foot">
+              <a class="link" href="#">Demo</a>
+              <a class="link" href="#">Repositorio</a>
+            </footer>
+          </article>
 
-  <h3>🌍 Impacto</h3>
-  <p>
-    EcoRegistro fomenta el <b>reciclaje</b> mediante un sistema de <b>bonificación en puntos</b>, 
-    motivando la participación ciudadana y apoyando la reducción de residuos.
-  </p>
-                </article>
-        </section>
-    <section>
-                <article>
-                    <h2>🌱 Proyecto Integrador: EcoRegistro</h2>
-  <p>
-    <strong>Periodo:</strong> 
-    <time datetime="2025-05">Mayo 2025</time> - 
-    <time datetime="2025-07">Julio 2025</time>
-  </p>
+          <!-- Proyecto 2 -->
+          <article class="card project">
+            <header class="project__head">
+              <h3>📲 Escuela QR</h3>
+              <p class="periodo">
+                <time datetime="2025-08">Ago 2025</time> – <time datetime="2025-10">Oct 2025</time>
+              </p>
+            </header>
+            <p>App Flutter para asistencia con QR y huella. Roles: alumno, profesor y admin. Auth con Firebase.</p>
+            <ul class="tags">
+              <li class="tag">Flutter</li>
+              <li class="tag">Firebase</li>
+            </ul>
+            <footer class="project__foot">
+              <a class="link" href="#">Demo</a>
+              <a class="link" href="#">Repositorio</a>
+            </footer>
+          </article>
 
-  <h3>⚙️ Tecnologías y desarrollo</h3>
-  <ul>
-    <li>💻 Desarrollé la <b>interfaz de usuario</b> con <b>Windows Forms</b> para una experiencia intuitiva.</li>
-    <li>🔄 Implementé la <b>lógica de negocio</b> para registrar donaciones y calcular puntos de bonificación.</li>
-    <li>🗄️ Utilicé <b>SQL Server</b> como base de datos para almacenar usuarios y donaciones.</li>
-    <li>✅ Apliqué <b>pruebas</b> para asegurar la funcionalidad y la usabilidad del sistema.</li>
-    <li>👥 Colaboré con un <b>equipo de 4 personas</b>, usando <b>metodologías ágiles</b> (SCRUM) para la gestión.</li>
-  </ul>
+          <!-- Proyecto 3 -->
+          <article class="card project">
+            <header class="project__head">
+              <h3>🌱 EcoRegistro</h3>
+              <p class="periodo">
+                <time datetime="2025-06">Jun 2025</time> – <time datetime="2025-09">Sep 2025</time>
+              </p>
+            </header>
+            <p>Sistema para <strong>registro de donaciones reciclables</strong> y bonificaciones de usuarios. Programado
+              en C#.</p>
+            <ul class="tags">
+              <li class="tag">C#</li>
+              <li class="tag">Windows Forms</li>
+              <li class="tag">SQL</li>
+            </ul>
+            <footer class="project__foot">
+              <a class="link" href="#">Demo</a>
+              <a class="link" href="#">Repositorio</a>
+            </footer>
+          </article>
 
-  <h3>🌍 Impacto</h3>
-  <p>
-    EcoRegistro fomenta el <b>reciclaje</b> mediante un sistema de <b>bonificación en puntos</b>, 
-    motivando la participación ciudadana y apoyando la reducción de residuos.
-  </p>
-                </article>
-        </section>
+          <!-- Proyecto 4 -->
+          <article class="card project">
+            <header class="project__head">
+              <h3>🛒 Tienda Express</h3>
+              <p class="periodo">
+                <time datetime="2025-03">Mar 2025</time> – <time datetime="2025-05">May 2025</time>
+              </p>
+            </header>
+            <p>Web app de <strong>e-commerce</strong> para ventas rápidas de productos con carrito y pagos integrados.
+            </p>
+            <ul class="tags">
+              <li class="tag">React</li>
+              <li class="tag">Node.js</li>
+              <li class="tag">MongoDB</li>
+            </ul>
+            <footer class="project__foot">
+              <a class="link" href="#">Demo</a>
+              <a class="link" href="#">Repositorio</a>
+            </footer>
+          </article>
 
-    <section>
-                <article>
-                    <h2>🌱 Proyecto Integrador: EcoRegistro</h2>
-  <p>
-    <strong>Periodo:</strong> 
-    <time datetime="2025-05">Mayo 2025</time> - 
-    <time datetime="2025-07">Julio 2025</time>
-  </p>
+          <!-- Proyecto 5 -->
+          <article class="card project">
+            <header class="project__head">
+              <h3>📊 DataViz Pro</h3>
+              <p class="periodo">
+                <time datetime="2025-04">Abr 2025</time> – <time datetime="2025-06">Jun 2025</time>
+              </p>
+            </header>
+            <p>Dashboard interactivo para <strong>visualización de datos</strong> con gráficos dinámicos y filtros
+              avanzados.</p>
+            <ul class="tags">
+              <li class="tag">Python</li>
+              <li class="tag">Dash</li>
+              <li class="tag">Plotly</li>
+            </ul>
+            <footer class="project__foot">
+              <a class="link" href="#">Demo</a>
+              <a class="link" href="#">Repositorio</a>
+            </footer>
+          </article>
 
-  <h3>⚙️ Tecnologías y desarrollo</h3>
-  <ul>
-    <li>💻 Desarrollé la <b>interfaz de usuario</b> con <b>Windows Forms</b> para una experiencia intuitiva.</li>
-    <li>🔄 Implementé la <b>lógica de negocio</b> para registrar donaciones y calcular puntos de bonificación.</li>
-    <li>🗄️ Utilicé <b>SQL Server</b> como base de datos para almacenar usuarios y donaciones.</li>
-    <li>✅ Apliqué <b>pruebas</b> para asegurar la funcionalidad y la usabilidad del sistema.</li>
-    <li>👥 Colaboré con un <b>equipo de 4 personas</b>, usando <b>metodologías ágiles</b> (SCRUM) para la gestión.</li>
-  </ul>
 
-  <h3>🌍 Impacto</h3>
-  <p>
-    EcoRegistro fomenta el <b>reciclaje</b> mediante un sistema de <b>bonificación en puntos</b>, 
-    motivando la participación ciudadana y apoyando la reducción de residuos.
-  </p>
-                </article>
-        </section>
-        
-        <!-- Pie de página -->
-        <footer>
-            <p>© 2025 Todos los derechos reservados</p>
-            <address>Cancun QuintanaRoo Mexico</address>
-        </footer>
-        <link rel="stylesheet" href="css/estilo.css">
-    </body>
+
+        </div>
+
+        <!-- Carousel sencillo de testimonios -->
+        <div style="margin-top:20px;">
+          <h3 class="reveal">Testimonios</h3>
+          <div class="card carousel reveal" id="testimonial-carousel" aria-roledescription="carousel">
+            <div class="carousel-track" id="carousel-track">
+              <div class="carousel-slide">
+                <blockquote>"Juan es muy responsable y aprende rápido." <br><cite>— Prof. Ana Martínez</cite>
+                </blockquote>
+              </div>
+              <div class="carousel-slide">
+                <blockquote>"Su app de asistencia fue muy útil para nuestra escuela." <br><cite>— Mtro. Luis
+                    Pérez</cite></blockquote>
+              </div>
+              <div class="carousel-slide">
+                <blockquote>"Gran actitud y trabajo en equipo." <br><cite>— Compañero de proyecto</cite></blockquote>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-nav" id="carousel-nav"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICACIONES -->
+    <section id="certificaciones" class="section">
+      <div class="container">
+        <h2 class="reveal">Certificaciones</h2>
+        <div class="projects-grid reveal">
+          <article class="card">
+            <h3>Certificado de Git y GitHub</h3>
+            <p class="muted">Plataforma: Coursera / 2024</p>
+          </article>
+          <article class="card">
+            <h3>Curso de Flutter (Intermedio)</h3>
+            <p class="muted">Plataforma: Udemy / 2025</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="section">
+      <div class="container">
+        <h2 class="reveal">Contáctame</h2>
+
+        <div class="contact">
+          <div class="card reveal">
+            <p>¿Tienes una idea o proyecto? ¡Hablemos!</p>
+            <p><strong>Email:</strong> <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=juanlladino238@gmail.com&su=Contacto%20Portafolio">juanlladino238@gmail.com</a>
+            </p>
+            <p><strong>Ubicación:</strong> Cancún, Quintana Roo, México</p>
+
+            <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+              <a class="btn btn--primary"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=juanlladino238@gmail.com&su=Contacto%20Portafolio"
+                target="_blank">
+                Enviarme correo
+              </a>
+
+              <a class="btn btn--ghost" href="CV_Juan_Daniel_Ladino_2.0.pdf_2025_7_30.pdf" download>Descargar CV</a>
+            </div>
+          </div>
+
+          <form class="card form reveal" action="https://formspree.io/f/meopjejk" method="POST">
+            <label>Nombre
+              <input type="text" name="name" required />
+            </label>
+            <label>Correo
+              <input type="email" name="email" required />
+            </label>
+            <label>Mensaje
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="btn btn--primary" type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__grid">
+      <p>© <span id="year"></span> Juan Daniel. Todos los derechos reservados.</p>
+      <address>Cancún, Quintana Roo, México</address>
+    </div>
+  </footer>
+
+  <!-- Floating social / contact quick buttons -->
+  <div class="social-float" aria-hidden="false">
+    <a href="https://wa.me/5212382078730?text=Hola%20Juan,%20vi%20tu%20portafolio" aria-label="WhatsApp"
+      title="WhatsApp" target="_blank" rel="noopener">
+      <!-- whatsapp svg -->
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M20.5 3.5A11.9 11.9 0 0 0 12 .5 11.9 11.9 0 0 0 3.5 3.5 11.9 11.9 0 0 0 .5 12c0 2.2.6 4.3 1.9 6.1L.5 23.5l5.9-1.6A11.9 11.9 0 0 0 12 23.5c3.2 0 6.2-1.2 8.5-3.5A11.9 11.9 0 0 0 23.5 12 11.9 11.9 0 0 0 20.5 3.5zM12 20c-2.6 0-5-.8-7-2.3L4 18l1.5-2.2C4.4 13.7 3.8 12.1 3.8 10.4 3.8 7 6.8 4 10.2 4c2 0 3.9.8 5.3 2.2C16.9 7.6 17.8 9.7 17.8 12c0 3-1.8 5.6-4.6 6.8-1.3.6-2.7.9-4.2.9z" />
+      </svg>
+    </a>
+
+    <a href="https://github.com/Desconocidoname" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M12 .5C5.7.5.9 5.3.9 11.6c0 4.6 3 8.5 7.2 9.9.5.1.7-.2.7-.5v-1.7c-3 .7-3.6-1.4-3.6-1.4-.4-1.1-1-1.4-1-1.4-.8-.6.1-.6.1-.6.9.1 1.4.9 1.4.9.8 1.4 2.1 1 2.6.8.1-.7.3-1 .6-1.3-2.4-.3-4.9-1.2-4.9-5.2 0-1.1.4-2 1-2.7-.1-.3-.4-1.4.1-3 0 0 .8-.3 2.7 1 .8-.2 1.6-.3 2.4-.3s1.6.1 2.4.3c1.9-1.3 2.7-1 2.7-1 .5 1.6.2 2.7.1 3 .6.7 1 1.6 1 2.7 0 4-2.6 4.9-4.9 5.2.3.3.6.9.6 1.8v2.7c0 .3.2.6.7.5 4.2-1.4 7.2-5.3 7.2-9.9C23.1 5.3 18.3.5 12 .5z" />
+      </svg>
+    </a>
+
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/juan-daniel-ladino-hern%C3%A1ndez-b03b1732a/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M19 0h-14c-2.8 0-5 2.2-5 5v14c0 
+             2.8 2.2 5 5 5h14c2.8 0 5-2.2 
+             5-5v-14c0-2.8-2.2-5-5-5zm-11 
+             19h-3v-9h3v9zm-1.5-10.3c-1 
+             0-1.8-.8-1.8-1.8s.8-1.8 
+             1.8-1.8 1.8.8 1.8 1.8-.8 
+             1.8-1.8 1.8zm13.5 
+             10.3h-3v-4.9c0-1.2 0-2.8-1.7-2.8-1.7 
+             0-2 1.3-2 2.7v5h-3v-9h2.9v1.2h.1c.4-.8 
+             1.4-1.7 2.8-1.7 3 0 3.6 2 3.6 
+             4.6v4.9z" />
+      </svg>
+    </a>
+
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // ====== Año dinámico ======
+    // Pone el año actual dentro del elemento con id="year"
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ====== Theme toggle (persistir en localStorage) ======
+    // Referencias a nodos importantes
+    const themeBtn = document.getElementById('btn-theme'); // botón que cambia tema
+    const htmlRoot = document.documentElement; // <html> para poner data-theme
+    // Recupera el tema guardado en localStorage o usa la preferencia del sistema
+    const savedTheme = localStorage.getItem('theme') ||
+      (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+
+    // Si el tema guardado es 'light', lo aplicamos en el root (<html data-theme="light">)
+    if (savedTheme === 'light') htmlRoot.setAttribute('data-theme', 'light');
+
+    // Escucha clicks en el botón para alternar tema
+    themeBtn.addEventListener('click', () => {
+      // Determina el tema actual ('light' si existe el atributo, si no 'dark')
+      const cur = htmlRoot.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
+      // El siguiente estado será el opuesto
+      const next = cur === 'light' ? 'dark' : 'light';
+      // Si next es light, añadimos el atributo; si no, lo removemos (vuelve a dark por defecto)
+      if (next === 'light') htmlRoot.setAttribute('data-theme', 'light');
+      else htmlRoot.removeAttribute('data-theme');
+      // Guardamos la elección en localStorage para la próxima visita
+      localStorage.setItem('theme', next);
+    });
+
+    // ====== Typing animation (hero) ======
+    // Elemento donde aparece el texto "tecleado"
+    const typingEl = document.getElementById('typing');
+    // Frases que se rotan en el typing
+    const texts = ['Desarrollador Multiplataforma', 'Estudiante de Ingeniería en TI', 'Apasionado por Flutter y Web'];
+    // Índices y estado para el bucle de tipeo
+    let tIndex = 0, char = 0, deleting = false;
+
+    // Función que hace el efecto de escritura / borrado
+    function typeTick() {
+      const current = texts[tIndex]; // frase actual
+      if (!deleting) {
+        // Si no estamos borrando, vamos aumentando el número de caracteres mostrados
+        typingEl.textContent = current.slice(0, ++char);
+        // Si llegamos al final de la frase, activamos el borrado tras una pausa
+        if (char === current.length) {
+          deleting = true;
+          setTimeout(typeTick, 1100); // pausa antes de empezar a borrar
+          return;
+        }
+      } else {
+        // Si estamos borrando, reducimos el número de caracteres
+        typingEl.textContent = current.slice(0, --char);
+        // Si ya no queda ningún carácter, pasamos a la siguiente frase y paramos el borrado
+        if (char === 0) {
+          deleting = false;
+          tIndex = (tIndex + 1) % texts.length; // siguiente índice (loop)
+        }
+      }
+      // Llamada recursiva con distinta velocidad según si borramos o escribimos
+      setTimeout(typeTick, deleting ? 40 : 80);
+    }
+    // Inicia la animación de tipeo
+    typeTick();
+
+    // ====== Visitor counter (localStorage) con animación numérica ======
+    const visitsEl = document.getElementById('visits'); // elemento donde mostrar visitas
+    // Obtenemos el número guardado en localStorage (o 0 si no existe)
+    let visits = parseInt(localStorage.getItem('visits') || '0', 10);
+    visits += 1; // incrementamos por la visita actual
+    localStorage.setItem('visits', visits); // guardamos de nuevo
+    // Variables para animar el conteo visual desde 0 hasta visits
+    let anim = 0;
+    const target = visits;
+    // step controla cuánto incrementa por frame (para que la animación sea rápida en números altos)
+    const step = Math.max(1, Math.floor(target / 30));
+    const animateVisits = () => {
+      anim += step; // avanzamos
+      if (anim >= target) {
+        // si ya llegamos o superamos, fijamos el valor final y salimos
+        visitsEl.textContent = target;
+        return;
+      }
+      visitsEl.textContent = anim; // mostramos valor intermedio
+      requestAnimationFrame(animateVisits); // siguiente frame
+    };
+    // Inicia la animación del contador
+    animateVisits();
+
+    // ====== Skills fill on reveal ======
+    // Función que añade la clase 'visible' a elementos .reveal cuando entran en viewport
+    // y además llena las barras de habilidades (.skill__fill) según su atributo data-fill
+    function revealOnScroll() {
+      // Recorre todos los elementos con la clase 'reveal'
+      document.querySelectorAll('.reveal').forEach(el => {
+        const rect = el.getBoundingClientRect(); // posición relativa en pantalla
+        // Si la parte superior está dentro de la ventana menos 80px, la hacemos visible
+        if (rect.top < (window.innerHeight - 80)) el.classList.add('visible');
+      });
+
+      // Rellena las barras de habilidad cuando su contenedor es visible
+      document.querySelectorAll('.skill__fill').forEach(bar => {
+        // Buscamos el contenedor relevante: el .reveal más cercano o la .card
+        const parent = bar.closest('.reveal') || bar.closest('.card');
+        // Si el contenedor existe y está visible, aplicamos el ancho del data-fill
+        if (parent && parent.classList.contains('visible')) {
+          const w = bar.getAttribute('data-fill') || '60%';
+          bar.style.width = w;
+        }
+      });
+    }
+    // Ejecutamos revealOnScroll cuando el usuario hace scroll
+    window.addEventListener('scroll', revealOnScroll);
+    // Y también al cargar la página, para marcar elementos ya visibles al inicio
+    window.addEventListener('load', () => { revealOnScroll(); initCarousel(); });
+
+    // ====== Simple carousel for testimonials ======
+    function initCarousel() {
+      const track = document.getElementById('carousel-track'); // contenedor de las slides
+      if (!track) return; // si no existe, salimos (evita errores)
+      const slides = track.children; // nodos de cada slide
+      const nav = document.getElementById('carousel-nav'); // contenedor de los botones (dots)
+      let idx = 0; // índice de la slide actual
+
+      // Función para mover el carrusel a la slide i
+      function go(i) {
+        idx = (i + slides.length) % slides.length; // asegura valor entre 0 y slides.length-1
+        track.style.transform = `translateX(-${idx * 100}%)`; // mueve el track por porcentaje
+        // Actualiza el estado aria-pressed de los botones de navegación
+        Array.from(nav.children).forEach((b, bi) => b.setAttribute('aria-pressed', bi === idx));
+      }
+
+      // Crea los puntos de navegación (dots) dinámicamente
+      for (let i = 0; i < slides.length; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'icon-btn';
+        btn.ariaLabel = 'Ir a testimonio ' + (i + 1); // etiqueta accesible
+        btn.innerText = '•'; // símbolo visible (puedes reemplazar por SVG)
+        btn.onclick = () => go(i); // al hacer click vamos a la slide i
+        btn.setAttribute('aria-pressed', i === 0); // el primero está presionado por defecto
+        nav.appendChild(btn); // añadimos al nav
+      }
+
+      // Rotación automática cada 6 segundos
+      setInterval(() => go(idx + 1), 6000);
+      // Mostrar la primera slide al inicio
+      go(0);
+    }
+
+    // ====== Scroll reveal usando IntersectionObserver (más eficiente) ======
+    // Crea un observer que marca elementos como visibles cuando aparecen en viewport
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible'); // añade clase visible
+          io.unobserve(e.target); // deja de observar para no repetir
+        }
+      });
+    }, { threshold: 0.12 }); // se considera visible cuando ~12% aparece
+
+    // Observa todos los elementos .reveal con el observer
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // ====== Accesibilidad: mostrar outline cuando se navega con teclado ======
+    document.body.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') document.documentElement.classList.add('show-focus');
+    });
+
+    // ====== Header scrolled class (cambia apariencia al bajar) ======
+    const header = document.querySelector('header'); // referencia al header global
+    window.addEventListener('scroll', () => {
+      // Si se ha hecho scroll más de 50px añadimos la clase 'scrolled'
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+
+    // ====== Navegación del carousel con flechas del teclado (mejora pequeña) ======
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+        const track = document.getElementById('carousel-track');
+        if (!track) return;
+        const slides = track.children.length;
+        // Leemos el transform actual para inferir el índice
+        let transform = track.style.transform || 'translateX(-0%)';
+        const m = transform.match(/-([0-9]+)%/); // busca el porcentaje negativo
+        let idx = m ? parseInt(m[1], 10) / 100 : 0;
+        idx = Math.round(idx);
+        // Ajustamos índice según la flecha presionada
+        if (e.key === 'ArrowLeft') idx = (idx - 1 + slides) % slides;
+        if (e.key === 'ArrowRight') idx = (idx + 1) % slides;
+        track.style.transform = `translateX(-${idx * 100}%)`;
+      }
+    });
+
+    /* ===== Mobile nav toggle ===== */
+    const navToggle = document.getElementById('nav-toggle'); // botón hamburguesa
+    const navList = document.getElementById('nav-list'); // lista UL de navegación
+
+    if (navToggle && navList) {
+      // Alterna el menú en móvil (añade/remueve clase .open)
+      navToggle.addEventListener('click', () => {
+        const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', String(!expanded)); // actualiza atributo accesible
+        navList.classList.toggle('open'); // muestra/oculta UL
+        // También alterna el contenedor raíz si existe (varía según estructura)
+        const navRoot = document.getElementById('menu-principal');
+        if (navRoot) navRoot.classList.toggle('open');
+      });
+
+      // Cierra el menú cuando se hace click en un enlace (en móvil)
+      navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        if (window.innerWidth <= 720) {
+          navList.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+          const navRoot = document.getElementById('menu-principal');
+          if (navRoot) navRoot.classList.remove('open');
+        }
+      }));
+    }
+
+    /* ===== Touch swipe for simple carousel (testimonios) ===== */
+    (function () {
+      const track = document.getElementById('carousel-track');
+      if (!track) return; // si no hay carrusel, salimos
+      let startX = 0, deltaX = 0, isDown = false;
+
+      // Cuando empieza el toque guardamos la posición inicial
+      track.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+        isDown = true;
+        track.style.transition = 'none'; // quitamos transiciones mientras se arrastra
+      }, { passive: true });
+
+      // Mientras se mueve el dedo actualizamos el transform para efecto arrastre
+      track.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        deltaX = e.touches[0].clientX - startX;
+        track.style.transform = `translateX(calc(var(--current, 0%) + ${deltaX}px))`;
+      }, { passive: true });
+
+      // Al soltar restauramos la transición (se usará el JS del carrusel para posicionar)
+      track.addEventListener('touchend', (e) => {
+        isDown = false;
+        track.style.transition = '';
+        // fallback: reseteamos transform para que el initCarousel lo ponga correcto
+        track.style.transform = '';
+      });
+    })();
+
+    // ---- Rotador de avatar (alternar imágenes de perfil cada X segundos) ----
+    (function () {
+      const avatar = document.querySelector('.hero__photo .avatar'); // img del avatar
+      if (!avatar) return; // si no existe, salimos
+
+      // Lista de imágenes que se rotarán (añade las rutas que necesites)
+      const images = [
+        'images/222046344.png',
+        'images/Foto-perfil.jpg'
+        // puedes agregar más: 'images/otra.png', ...
+      ];
+
+      // Pre-carga las imágenes para que el cambio sea más fluido
+      images.forEach(src => { const i = new Image(); i.src = src; });
+
+      // Índice inicial: intenta encontrar la src actual dentro de la lista
+      let idx = images.indexOf(avatar.getAttribute('src'));
+      if (idx === -1) idx = 0; // si no está, empezamos en 0
+
+      // Respeta la preferencia por reducir motion (usuarios que pidieron animaciones reducidas)
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const intervalMs = 2000; // intervalo en ms entre cambios (2000 = 2s)
+
+      let timer = null;
+
+      // Función que muestra la siguiente imagen (con fade si es posible)
+      function showNext() {
+        idx = (idx + 1) % images.length; // siguiente índice (loop)
+        const nextSrc = images[idx];
+
+        // Si el usuario pidió reducir motion, simplemente cambia la src sin animación
+        if (prefersReduced) {
+          avatar.src = nextSrc;
+          return;
+        }
+
+        // Efecto: fade out -> cambiar src -> fade in
+        avatar.style.opacity = 0; // dispara CSS transition si la img tiene transition en CSS
+        // Pequeño delay para permitir que el fade out se aplique
+        setTimeout(() => {
+          avatar.src = nextSrc; // cambiamos la imagen
+          // Cuando la imagen se haya cargado, restauramos opacidad para fade in
+          avatar.onload = () => {
+            avatar.style.opacity = 1;
+          };
+        }, 200); // 200ms coincide razonablemente con la transición en CSS
+      }
+
+      // Inicia el temporizador de rotación
+      function start() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(showNext, intervalMs);
+      }
+      // Parar el temporizador
+      function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+      }
+
+      // Pausa la rotación cuando la pestaña se pone en background (ahorra CPU/red)
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stop();
+        else start();
+      });
+
+      // Solo arrancamos si hay más de una imagen
+      if (images.length > 1) start();
+
+    })();
+
+  </script>
+
+</body>
+
 </html>
